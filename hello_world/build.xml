@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<project name="OurProject" default="run">
+    <target name="init">
+        <mkdir dir="build/classes"/>
+        <mkdir dir="dist"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="src"
+               destdir="build/classes"/>
+    </target>
+
+    <target name="package" depends="compile">
+        <jar destfile="dist/hello_world.jar"
+             basedir="build/classes"/>
+    </target>
+
+    <target name="run" depends="package">
+        <!--<java jar="dist/hello_world.jar"-->
+                <!--/>-->
+        <!--<java-->
+                <!--classname="com.rchab.ant.helloworld.App"-->
+                <!--classpath="build/classes">-->
+            <!--<arg value="Rostyk"/>-->
+        <!--</java>-->
+    </target>
+</project>
